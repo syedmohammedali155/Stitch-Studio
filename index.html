@@ -2431,8 +2431,8 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Ladies Trouser Plain": {
-                "👖 Trouser Plain Measurements": [
+            "Ladies Trouser ": {
+                "👖 Trouser  Measurements": [
                     "Trouser Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Thai / Raan (ران)",
@@ -2462,7 +2462,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Ladies Complete Suit (Shirt + Trouser Plain )": {
+            "Ladies Complete Suit (Shirt + Trouser  )": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2476,7 +2476,7 @@
                     "Kandha (کندھا)",
                     "Gala (گلا)"
                 ],
-                "👖 Trouser Plain  Measurements": [
+                "👖 Trouser Measurements": [
                     "Trouser Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Thai / Raan (ران)",
@@ -2598,7 +2598,7 @@
                 });
                 const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
                 const shalwarKey = isLadies ? 'Ladies Shalwar ' : 'Shalwar';
-                const trouserKey = 'Ladies Trouser Plain ';
+                const trouserKey = 'Ladies Trouser  ';
 
                 if (Object.keys(kMeasures).length > 0) {
                     normalized[shirtKey] = Object.assign(normalized[shirtKey] || {}, kMeasures);
@@ -2614,7 +2614,7 @@
                 else if (gKey === 'Gents Shalwar Only') targetKey = 'Shalwar';
                 else if (gKey === 'Ladies SHIRT Only') targetKey = 'Ladies Shirt';
                 else if (gKey === 'Ladies Shalwar  Only') targetKey = 'Ladies Shalwar ';
-                else if (gKey === 'Ladies trauser plain  Only') targetKey = 'Ladies Trouser Plain ';
+                else if (gKey === 'Ladies trauser  Only') targetKey = 'Ladies Trouser  ';
 
                 normalized[targetKey] = Object.assign(normalized[targetKey] || {}, cleanSpecs);
             }
@@ -2658,7 +2658,7 @@
         if (garment.includes('Complete Suit') && garment.includes('Trouser')) {
             return {
                 ...(cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {}),
-                ...(cust.measurements['Ladies Trouser Plain '] || cust.measurements['Ladies trauser plain Only'] || {})
+                ...(cust.measurements['Ladies Trouser '] || cust.measurements['Ladies trauser Only'] || {})
             };
         }
         if (garment === 'Kameez' || garment === 'Kameez / Shirt Only' || garment === 'Shirt / Kameez') {
@@ -2673,8 +2673,8 @@
         if (garment === 'Ladies Shalwar ' || garment === 'Ladies Shalwar Only') {
             return cust.measurements['Ladies Shalwar '] || cust.measurements['Ladies Shalwar Only'] || {};
         }
-        if (garment === 'Ladies Trouser Plain ' || garment === 'Ladies trauser plain Only') {
-            return cust.measurements['Ladies Trouser Plain '] || cust.measurements['Ladies trauser plain Only'] || {};
+        if (garment === 'Ladies Trouser  ' || garment === 'Ladies trauser Only') {
+            return cust.measurements['Ladies Trouser  '] || cust.measurements['Ladies trauser  Only'] || {};
         }
         return cust.measurements[garment] || {};
     }
@@ -3515,7 +3515,7 @@
                         db[key].measurements[sKey] = Object.assign(db[key].measurements[sKey] || {}, kM);
                     }
                     if (item.garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                        db[key].measurements['Ladies Trouser Plain '] = Object.assign(db[key].measurements['Ladies Trouser Plain '] || {}, tM);
+                        db[key].measurements['Ladies Trouser  '] = Object.assign(db[key].measurements['Ladies Trouser  '] || {}, tM);
                     } else if (Object.keys(sM).length > 0) {
                         const shKey = isF ? 'Ladies Shalwar' : 'Shalwar';
                         db[key].measurements[shKey] = Object.assign(db[key].measurements[shKey] || {}, sM);
@@ -3526,7 +3526,7 @@
                     else if (gName === 'Gents Shalwar Only') gName = 'Shalwar';
                     else if (gName === 'Ladies SHIRT Only') gName = 'Ladies Shirt';
                     else if (gName === 'Ladies Shalwar Only') gName = 'Ladies Shalwar ';
-                    else if (gName === 'Ladies trauser plain Only') gName = 'Ladies Trouser Plain ';
+                    else if (gName === 'Ladies trauser Only') gName = 'Ladies Trouser  ';
 
                     if (!db[key].measurements[gName]) {
                         db[key].measurements[gName] = {};
@@ -4461,7 +4461,7 @@
                 cust.measurements[sKey] = Object.assign(cust.measurements[sKey] || {}, kM);
             }
             if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                cust.measurements['Ladies Trouser Plain'] = Object.assign(cust.measurements['Ladies Trouser Plain '] || {}, tM);
+                cust.measurements['Ladies Trouser '] = Object.assign(cust.measurements['Ladies Trouser  '] || {}, tM);
             } else if (Object.keys(sM).length > 0) {
                 const shKey = isF ? 'Ladies Shalwar ' : 'Shalwar';
                 cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
@@ -4743,7 +4743,7 @@
                     cust.styleOptions[sKey] = styleOpts;
                 }
                 if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                    cust.measurements['Ladies Trouser Plain '] = Object.assign(cust.measurements['Ladies Trouser Plain '] || {}, tM);
+                    cust.measurements['Ladies Trouser  '] = Object.assign(cust.measurements['Ladies Trouser  '] || {}, tM);
                 } else if (Object.keys(sM).length > 0) {
                     const shKey = isF ? 'Ladies Shalwar ' : 'Shalwar';
                     cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
@@ -5198,7 +5198,7 @@
 
                 const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
                 const shalwarKey = isLadies ? 'Ladies Shalwar ' : 'Shalwar';
-                const trouserKey = 'Ladies Trouser Plain ';
+                const trouserKey = 'Ladies Trouser  ';
 
                 if (Object.keys(kM).length > 0) {
                     const styles = styleOptions[shirtKey] || styleOptions[gName] || styleOptions['Kameez'] || {};
@@ -5217,7 +5217,7 @@
                 else if (gName === 'Gents Shalwar Only') normalizedGName = 'Shalwar';
                 else if (gName === 'Ladies SHIRT Only') normalizedGName = 'Ladies Shirt';
                 else if (gName === 'Ladies Shalwar Only') normalizedGName = 'Ladies Shalwar ';
-                else if (gName === 'Ladies trauser plain Only') normalizedGName = 'Ladies Trouser Plain ';
+                else if (gName === 'Ladies trauser Only') normalizedGName = 'Ladies Trouser  ';
 
                 const styles = styleOptions[normalizedGName] || styleOptions[gName] || {};
                 garmentList.push({ garmentName: normalizedGName, specs, styles });
