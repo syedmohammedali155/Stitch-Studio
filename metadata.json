@@ -1,0 +1,6 @@
+{
+  "name": "Tailor Shop Invoice",
+  "description": "Professional Tailor Shop POS and A5 invoice management application with automated single-page PDF generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
