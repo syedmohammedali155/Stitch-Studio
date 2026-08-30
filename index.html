@@ -493,7 +493,7 @@
             color: var(--primary);
         }
 
-        /* ===== GENDER SELECTOR CARDS (MALE / FEMALE) ===== */
+        /* ===== GENDER SELECTOR CARDS (Gents / Ladies) ===== */
         .gender-selector-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1621,7 +1621,7 @@
                         <div class="form-group">
                             <label class="form-label">Payment Method</label>
                             <select id="payment-method-select" class="form-select" onchange="updateInvoicePreview()">
-                                <option value="cash">💵 Cash on Counter</option>
+                                <option value="cash">💵 Cash / Online</option>
                                 <option value="card">💳 Debit / Credit Card</option>
                                 <option value="bank">🏦 Bank Transfer</option>
                                 <option value="online">📱 JazzCash / EasyPaisa</option>
@@ -1647,13 +1647,13 @@
 
                     <!-- MODE 1: TAILORING GARMENT BUILDER -->
                     <div id="builder-garment-section">
-                        <!-- MALE / FEMALE SELECTOR CARDS -->
+                        <!-- Gents / Ladies SELECTOR CARDS -->
                         <div class="gender-selector-grid">
-                            <div class="gender-card active" id="gender-btn-male" onclick="setGender('male')">
-                                <span>MALE (Gents Tailoring)</span>
+                            <div class="gender-card active" id="gender-btn-Gents" onclick="setGender('Gents')">
+                                <span>(Gents Tailoring)</span>
                             </div>
-                            <div class="gender-card" id="gender-btn-female" onclick="setGender('female')">
-                                <span>FEMALE (Ladies Tailoring)</span>
+                            <div class="gender-card" id="gender-btn-Ladies" onclick="setGender('Ladies')">
+                                <span>(Ladies Tailoring)</span>
                             </div>
                         </div>
 
@@ -1661,7 +1661,7 @@
                         <div class="form-group" style="margin-bottom: 12px;">
                             <label class="form-label">Select Garment / Suit Type</label>
                             <select id="garment-select" class="form-select" onchange="onGarmentSelected()">
-                                <!-- Dynamically populated based on Male/Female -->
+                                <!-- Dynamically populated based on Gents/Ladies -->
                             </select>
                         </div>
 
@@ -1674,57 +1674,6 @@
                             <button type="button" onclick="openCurrentCustomerMeasurements()" style="background: #15803d; color: white; border: none; border-radius: 6px; padding: 3px 8px; font-size: 10.5px; font-weight: 700; cursor: pointer; white-space: nowrap;">
                                 View / Edit Measurements
                             </button>
-                        </div>
-
-                        <!-- ADDITIONAL TAILORING DETAILS (POCKET, DAMAN, BAN, COLLAR, OTHER) -->
-                        <div class="form-label" style="margin-bottom: 8px;">Additional Requirements & Fitting Options</div>
-                        <div class="extras-grid">
-                            <div class="form-group">
-                                <label class="form-label">Pocket</label>
-                                <select id="opt-pocket" class="form-select" onchange="onExtraOptionChange('pocket')">
-                                    <option value="None">None</option>
-                                    <option value="Front + Both Side">Front + Both Side</option>
-                                    <option value="One Side">One Side</option>
-                                    <option value="Front + One Side">Front + One Side</option>
-                                    <option value="Front + Both Side + Shalwar">Front + Both Side + Shalwar</option>
-                                    <option value="Both Side">Both Side</option>
-                                    <option value="Custom">Custom</option>
-                                </select>
-                                <input type="text" id="opt-pocket-custom" class="form-input" style="display:none; margin-top:4px; font-size:11px;" placeholder="Type custom pocket specification...">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Daman</label>
-                                <select id="opt-daman" class="form-select" onchange="onExtraOptionChange('daman')">
-                                    <option value="None">None</option>
-                                    <option value="Gol Daman (Round)">Gol Daman (Round)</option>
-                                    <option value="Choras Daman (Square)">Choras Daman (Square)</option>
-                                    <option value="Custom">Custom</option>
-                                </select>
-                                <input type="text" id="opt-daman-custom" class="form-input" style="display:none; margin-top:4px; font-size:11px;" placeholder="Type custom daman specification...">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ban</label>
-                                <select id="opt-ban" class="form-select" onchange="onExtraOptionChange('ban')">
-                                    <option value="None">None</option>
-                                    <option value="Full Ban">Full Ban</option>
-                                    <option value="Half Ban">Half Ban</option>
-                                    <option value="Ban with Neckline">Ban with Neckline</option>
-                                    <option value="Custom">Custom</option>
-                                </select>
-                                <input type="text" id="opt-ban-custom" class="form-input" style="display:none; margin-top:4px; font-size:11px;" placeholder="Type custom ban specification...">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Collar</label>
-                                <select id="opt-collar" class="form-select" onchange="onExtraOptionChange('collar')">
-                                    <option value="None">None</option>
-                                    <option value="Standard Collar">Standard Collar</option>
-                                    <option value="Small Collar">Small Collar</option>
-                                    <option value="French Collar">French Collar</option>
-                                    <option value="Cut Collar">Cut Collar</option>
-                                    <option value="Custom">Custom</option>
-                                </select>
-                                <input type="text" id="opt-collar-custom" class="form-input" style="display:none; margin-top:4px; font-size:11px;" placeholder="Type custom collar specification...">
-                            </div>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 14px;">
@@ -1859,7 +1808,7 @@
                             <div class="inv-type-badge">TAILORING & ALTERATIONS</div>
                             <div class="inv-shop-sub">📍 The Stitch Studio · Pakistan</div>
                             <div class="inv-shop-sub">📞 0334-5386285 · Fitting & Booking Desk</div>
-                            <div class="inv-delivery-badge">🚚 Free Delivery across Rawalpindi</div>
+                            <div class="inv-delivery-badge">Perfect Fit, Every Time</div>
                         </div>
                     </div>
 
@@ -1883,7 +1832,7 @@
                         </div>
                         <div class="inv-detail-item">
                             <span class="inv-detail-label">Type:</span>
-                            <span class="inv-detail-val" id="prev-gender">Male</span>
+                            <span class="inv-detail-val" id="prev-gender">Gents</span>
                         </div>
                         <div class="inv-detail-item">
                             <span class="inv-detail-label">Payment:</span>
@@ -1913,7 +1862,7 @@
                     <div class="inv-footer-flex">
                         <div class="inv-note-box">
                             <div class="inv-note-title">✨ Thank You!</div>
-                            <div class="inv-note-text">Thank you for choosing The Stitch Studio. Crafted with precision & made to fit! <strong>Free Delivery across Rawalpindi.</strong> Please bring this receipt for trial/delivery.</div>
+                            <div class="inv-note-text">Thank you for choosing The Stitch Studio. Crafted with precision & made to fit!  Please bring this receipt for trial/delivery.</div>
                         </div>
                         <div class="inv-totals-box">
                             <div class="inv-total-line">
@@ -2245,8 +2194,8 @@
                 <div class="form-group">
                     <label class="form-label">Tailoring Category</label>
                     <select id="reg-cust-gender" class="form-select" onchange="updateRegGarmentOptions()">
-                        <option value="male">Male (Gents)</option>
-                        <option value="female">Female (Ladies)</option>
+                        <option value="Gents">Gents (Gents)</option>
+                        <option value="Ladies">Ladies (Ladies)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -2393,7 +2342,7 @@
        1. DATA STRUCTURES & DEFINITIONS
        ========================================================= */
     const GARMENT_CONFIG = {
-        male: {
+        Gents: {
             "Kameez": {
                 "👔 Kameez / Shirt Measurements": [
                     "Shirt Length (لمبائی)",
@@ -2457,8 +2406,8 @@
                 ]
             }
         },
-        female: {
-            "Female Shirt": {
+        Ladies: {
+            "Ladies Shirt": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2473,7 +2422,7 @@
                     "Gala (گلا)"
                 ]
             },
-            "Female Shalwar Elastic": {
+            "Ladies Shalwar Elastic": {
                 "👖 Shalwar Elastic Measurements": [
                     "Shalwar Length (لمبائی)",
                     "Paucha (پانچہ)",
@@ -2482,7 +2431,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Female Trouser Plain Elastic": {
+            "Ladies Trouser Plain Elastic": {
                 "👖 Trouser Plain Elastic Measurements": [
                     "Trouser Length (لمبائی)",
                     "Paucha (پانچہ)",
@@ -2491,7 +2440,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Female Complete Suit (Shirt + Shalwar Elastic)": {
+            "Ladies Complete Suit (Shirt + Shalwar Elastic)": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2513,7 +2462,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Female Complete Suit (Shirt + Trouser Plain Elastic)": {
+            "Ladies Complete Suit (Shirt + Trouser Plain Elastic)": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2623,7 +2572,7 @@
     function normalizeCustomerMeasurements(cust) {
         if (!cust || !cust.measurements) return cust;
         const normalized = {};
-        const isFemale = (cust.gender === 'female');
+        const isLadies = (cust.gender === 'Ladies');
 
         Object.entries(cust.measurements).forEach(([gKey, specs]) => {
             if (!specs || typeof specs !== 'object') return;
@@ -2647,9 +2596,9 @@
                     else if (isTrouserField(f)) tMeasures[f] = v;
                     else kMeasures[f] = v;
                 });
-                const shirtKey = isFemale ? 'Female Shirt' : 'Kameez';
-                const shalwarKey = isFemale ? 'Female Shalwar Elastic' : 'Shalwar';
-                const trouserKey = 'Female Trouser Plain Elastic';
+                const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
+                const shalwarKey = isLadies ? 'Ladies Shalwar Elastic' : 'Shalwar';
+                const trouserKey = 'Ladies Trouser Plain Elastic';
 
                 if (Object.keys(kMeasures).length > 0) {
                     normalized[shirtKey] = Object.assign(normalized[shirtKey] || {}, kMeasures);
@@ -2663,9 +2612,9 @@
                 let targetKey = gKey;
                 if (gKey === 'Kameez / Shirt Only' || gKey === 'Shirt / Kameez') targetKey = 'Kameez';
                 else if (gKey === 'Gents Shalwar Only') targetKey = 'Shalwar';
-                else if (gKey === 'FEMALE SHIRT Only') targetKey = 'Female Shirt';
-                else if (gKey === 'Female Shalwar Elastic Only') targetKey = 'Female Shalwar Elastic';
-                else if (gKey === 'Female trauser plain elastic Only') targetKey = 'Female Trouser Plain Elastic';
+                else if (gKey === 'Ladies SHIRT Only') targetKey = 'Ladies Shirt';
+                else if (gKey === 'Ladies Shalwar Elastic Only') targetKey = 'Ladies Shalwar Elastic';
+                else if (gKey === 'Ladies trauser plain elastic Only') targetKey = 'Ladies Trouser Plain Elastic';
 
                 normalized[targetKey] = Object.assign(normalized[targetKey] || {}, cleanSpecs);
             }
@@ -2678,7 +2627,7 @@
             Object.entries(cust.styleOptions).forEach(([k, v]) => {
                 let targetK = k;
                 if (k.includes('Suit') || k === 'Kameez / Shirt Only' || k === 'Kameez') {
-                    targetK = isFemale ? 'Female Shirt' : 'Kameez';
+                    targetK = isLadies ? 'Ladies Shirt' : 'Kameez';
                 }
                 if (cust.measurements[targetK]) {
                     normalizedStyles[targetK] = v;
@@ -2702,14 +2651,14 @@
         }
         if (garment.includes('Complete Suit') && garment.includes('Shalwar')) {
             return {
-                ...(cust.measurements['Female Shirt'] || cust.measurements['FEMALE SHIRT Only'] || {}),
-                ...(cust.measurements['Female Shalwar Elastic'] || cust.measurements['Female Shalwar Elastic Only'] || {})
+                ...(cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {}),
+                ...(cust.measurements['Ladies Shalwar Elastic'] || cust.measurements['Ladies Shalwar Elastic Only'] || {})
             };
         }
         if (garment.includes('Complete Suit') && garment.includes('Trouser')) {
             return {
-                ...(cust.measurements['Female Shirt'] || cust.measurements['FEMALE SHIRT Only'] || {}),
-                ...(cust.measurements['Female Trouser Plain Elastic'] || cust.measurements['Female trauser plain elastic Only'] || {})
+                ...(cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {}),
+                ...(cust.measurements['Ladies Trouser Plain Elastic'] || cust.measurements['Ladies trauser plain elastic Only'] || {})
             };
         }
         if (garment === 'Kameez' || garment === 'Kameez / Shirt Only' || garment === 'Shirt / Kameez') {
@@ -2718,14 +2667,14 @@
         if (garment === 'Shalwar' || garment === 'Gents Shalwar Only') {
             return cust.measurements['Shalwar'] || cust.measurements['Gents Shalwar Only'] || {};
         }
-        if (garment === 'Female Shirt' || garment === 'FEMALE SHIRT Only') {
-            return cust.measurements['Female Shirt'] || cust.measurements['FEMALE SHIRT Only'] || {};
+        if (garment === 'Ladies Shirt' || garment === 'Ladies SHIRT Only') {
+            return cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {};
         }
-        if (garment === 'Female Shalwar Elastic' || garment === 'Female Shalwar Elastic Only') {
-            return cust.measurements['Female Shalwar Elastic'] || cust.measurements['Female Shalwar Elastic Only'] || {};
+        if (garment === 'Ladies Shalwar Elastic' || garment === 'Ladies Shalwar Elastic Only') {
+            return cust.measurements['Ladies Shalwar Elastic'] || cust.measurements['Ladies Shalwar Elastic Only'] || {};
         }
-        if (garment === 'Female Trouser Plain Elastic' || garment === 'Female trauser plain elastic Only') {
-            return cust.measurements['Female Trouser Plain Elastic'] || cust.measurements['Female trauser plain elastic Only'] || {};
+        if (garment === 'Ladies Trouser Plain Elastic' || garment === 'Ladies trauser plain elastic Only') {
+            return cust.measurements['Ladies Trouser Plain Elastic'] || cust.measurements['Ladies trauser plain elastic Only'] || {};
         }
         return cust.measurements[garment] || {};
     }
@@ -2734,14 +2683,14 @@
         if (!cust || !cust.styleOptions) return {};
         if (cust.styleOptions[garment]) return cust.styleOptions[garment];
         if (garment.includes('Complete Suit') || garment === 'Kameez / Shirt Only' || garment === 'Kameez') {
-            return cust.styleOptions['Kameez'] || cust.styleOptions['Female Shirt'] || {};
+            return cust.styleOptions['Kameez'] || cust.styleOptions['Ladies Shirt'] || {};
         }
         return cust.styleOptions[garment] || {};
     }
 
     /* Preference persistence helpers for Gender and Measurement Unit */
     function getSavedGenderPref() {
-        return localStorage.getItem('stitch_pref_gender') || 'male';
+        return localStorage.getItem('stitch_pref_gender') || 'Gents';
     }
 
     function saveGenderPref(gender) {
@@ -2783,7 +2732,7 @@
         delivered: '✅ Delivered'
     };
 
-    let currentGender = 'male';
+    let currentGender = 'Gents';
     let invoiceItems = [];
     let isGeneratingPDF = false;
 
@@ -2970,11 +2919,11 @@
             saveGenderPref(gender);
         }
 
-        const maleBtn = document.getElementById('gender-btn-male');
-        const femaleBtn = document.getElementById('gender-btn-female');
-        if (maleBtn && femaleBtn) {
-            maleBtn.classList.toggle('active', gender === 'male');
-            femaleBtn.classList.toggle('active', gender === 'female');
+        const GentsBtn = document.getElementById('gender-btn-Gents');
+        const LadiesBtn = document.getElementById('gender-btn-Ladies');
+        if (GentsBtn && LadiesBtn) {
+            GentsBtn.classList.toggle('active', gender === 'Gents');
+            LadiesBtn.classList.toggle('active', gender === 'Ladies');
         }
 
         const select = document.getElementById('garment-select');
@@ -3344,7 +3293,7 @@
         const currentUnit = getSavedUnitPref() || 'inches';
         invoiceItems.push({
             id: 'sample-1',
-            gender: 'male',
+            gender: 'Gents',
             garment: 'Gents Complete Suit (Kameez + Shalwar)',
             unit: currentUnit,
             extras: {
@@ -3482,7 +3431,7 @@
                     name: h.custName || 'Valued Customer',
                     phone: h.custPhone || '',
                     address: h.address || '',
-                    gender: h.gender || 'male',
+                    gender: h.gender || 'Gents',
                     notes: '',
                     visits: 0,
                     totalSpent: 0,
@@ -3533,7 +3482,7 @@
                 name: name.trim(),
                 phone: phone ? phone.trim() : '',
                 address: address ? address.trim() : '',
-                gender: gender || 'male',
+                gender: gender || 'Gents',
                 notes: '',
                 visits: 0,
                 totalSpent: 0,
@@ -3560,24 +3509,24 @@
                         else if (isTrouserField(f)) tM[f] = v;
                         else kM[f] = v;
                     });
-                    const isF = (gender === 'female');
+                    const isF = (gender === 'Ladies');
                     if (Object.keys(kM).length > 0) {
-                        const sKey = isF ? 'Female Shirt' : 'Kameez';
+                        const sKey = isF ? 'Ladies Shirt' : 'Kameez';
                         db[key].measurements[sKey] = Object.assign(db[key].measurements[sKey] || {}, kM);
                     }
                     if (item.garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                        db[key].measurements['Female Trouser Plain Elastic'] = Object.assign(db[key].measurements['Female Trouser Plain Elastic'] || {}, tM);
+                        db[key].measurements['Ladies Trouser Plain Elastic'] = Object.assign(db[key].measurements['Ladies Trouser Plain Elastic'] || {}, tM);
                     } else if (Object.keys(sM).length > 0) {
-                        const shKey = isF ? 'Female Shalwar Elastic' : 'Shalwar';
+                        const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
                         db[key].measurements[shKey] = Object.assign(db[key].measurements[shKey] || {}, sM);
                     }
                 } else {
                     let gName = item.garment;
                     if (gName === 'Kameez / Shirt Only' || gName === 'Shirt / Kameez') gName = 'Kameez';
                     else if (gName === 'Gents Shalwar Only') gName = 'Shalwar';
-                    else if (gName === 'FEMALE SHIRT Only') gName = 'Female Shirt';
-                    else if (gName === 'Female Shalwar Elastic Only') gName = 'Female Shalwar Elastic';
-                    else if (gName === 'Female trauser plain elastic Only') gName = 'Female Trouser Plain Elastic';
+                    else if (gName === 'Ladies SHIRT Only') gName = 'Ladies Shirt';
+                    else if (gName === 'Ladies Shalwar Elastic Only') gName = 'Ladies Shalwar Elastic';
+                    else if (gName === 'Ladies trauser plain elastic Only') gName = 'Ladies Trouser Plain Elastic';
 
                     if (!db[key].measurements[gName]) {
                         db[key].measurements[gName] = {};
@@ -3722,7 +3671,7 @@
         if (document.getElementById('cust-phone-input') && c.phone) document.getElementById('cust-phone-input').value = c.phone;
         if (document.getElementById('cust-address-input') && c.address) document.getElementById('cust-address-input').value = c.address;
 
-        if (c.gender && (c.gender === 'male' || c.gender === 'female')) {
+        if (c.gender && (c.gender === 'Gents' || c.gender === 'Ladies')) {
             setGender(c.gender);
         } else {
             updateMeasurementsGrid();
@@ -4326,7 +4275,7 @@
             const specs = garments[gName];
             return specs && typeof specs === 'object' && Object.values(specs).some(v => v !== undefined && v !== null && String(v).trim() !== '');
         });
-        const custGender = cust.gender || 'male';
+        const custGender = cust.gender || 'Gents';
 
         let savedListHtml = '';
         if (garmentKeys.length === 0) {
@@ -4346,7 +4295,7 @@
                 `).join('');
 
                 const safeGarmentName = gName.replace(/'/g, "\\'");
-                const icon = (gName.toLowerCase().includes('shalwar') || gName.toLowerCase().includes('trouser')) ? '👖' : (gName.toLowerCase().includes('kurta') ? '🥻' : (gName.toLowerCase().includes('waistcoat') ? '🧥' : (gName.toLowerCase().includes('shirt') && custGender === 'female' ? '👗' : '👔')));
+                const icon = (gName.toLowerCase().includes('shalwar') || gName.toLowerCase().includes('trouser')) ? '👖' : (gName.toLowerCase().includes('kurta') ? '🥻' : (gName.toLowerCase().includes('waistcoat') ? '🧥' : (gName.toLowerCase().includes('shirt') && custGender === 'Ladies' ? '👗' : '👔')));
 
                 return `
                     <div style="margin-bottom:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:12px;">
@@ -4370,7 +4319,7 @@
         }
 
         // Available garments for gender
-        const availableGarments = GARMENT_CONFIG[custGender] || GARMENT_CONFIG['male'];
+        const availableGarments = GARMENT_CONFIG[custGender] || GARMENT_CONFIG['Gents'];
         const selectedGarmentName = editGarment || Object.keys(availableGarments)[0];
         const existingGarmentVals = getCustomerMeasurementsForGarment(cust, selectedGarmentName);
 
@@ -4421,8 +4370,8 @@
                     <div class="form-group">
                         <label class="form-label" style="font-size:11px;">Category</label>
                         <select id="vault-gender-select" class="form-select" style="font-size:11px; padding:6px 10px;" onchange="onVaultGenderChange('${encodedKey}')">
-                            <option value="male" ${custGender === 'male' ? 'selected' : ''}>👨 Male (Gents)</option>
-                            <option value="female" ${custGender === 'female' ? 'selected' : ''}>👩 Female (Ladies)</option>
+                            <option value="Gents" ${custGender === 'Gents' ? 'selected' : ''}>👨 Gents (Gents)</option>
+                            <option value="Ladies" ${custGender === 'Ladies' ? 'selected' : ''}>👩 Ladies (Ladies)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -4447,7 +4396,7 @@
     }
 
     function onVaultGenderChange(encodedKey) {
-        const gender = document.getElementById('vault-gender-select')?.value || 'male';
+        const gender = document.getElementById('vault-gender-select')?.value || 'Gents';
         const key = decodeURIComponent(encodedKey);
         const db = getCustomersDB();
         const cust = db[key] || getSavedCustomers().find(c => c.key === key || c.name === key);
@@ -4506,15 +4455,15 @@
                 else if (isTrouserField(f)) tM[f] = v;
                 else kM[f] = v;
             });
-            const isF = (cust.gender === 'female');
+            const isF = (cust.gender === 'Ladies');
             if (Object.keys(kM).length > 0) {
-                const sKey = isF ? 'Female Shirt' : 'Kameez';
+                const sKey = isF ? 'Ladies Shirt' : 'Kameez';
                 cust.measurements[sKey] = Object.assign(cust.measurements[sKey] || {}, kM);
             }
             if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                cust.measurements['Female Trouser Plain Elastic'] = Object.assign(cust.measurements['Female Trouser Plain Elastic'] || {}, tM);
+                cust.measurements['Ladies Trouser Plain Elastic'] = Object.assign(cust.measurements['Ladies Trouser Plain Elastic'] || {}, tM);
             } else if (Object.keys(sM).length > 0) {
-                const shKey = isF ? 'Female Shalwar Elastic' : 'Shalwar';
+                const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
                 cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
             }
         } else {
@@ -4548,7 +4497,7 @@
                 if (document.getElementById('reg-cust-father')) document.getElementById('reg-cust-father').value = cust.fatherName || '';
                 if (document.getElementById('reg-cust-phone')) document.getElementById('reg-cust-phone').value = cust.phone || '';
                 if (document.getElementById('reg-cust-whatsapp')) document.getElementById('reg-cust-whatsapp').value = cust.whatsapp || cust.phone || '';
-                if (document.getElementById('reg-cust-gender')) document.getElementById('reg-cust-gender').value = cust.gender || 'male';
+                if (document.getElementById('reg-cust-gender')) document.getElementById('reg-cust-gender').value = cust.gender || 'Gents';
                 if (document.getElementById('reg-cust-date')) document.getElementById('reg-cust-date').value = cust.regDate || new Date().toISOString().split('T')[0];
                 if (document.getElementById('reg-cust-address')) document.getElementById('reg-cust-address').value = cust.address || '';
                 if (document.getElementById('reg-cust-notes')) document.getElementById('reg-cust-notes').value = cust.notes || '';
@@ -4563,7 +4512,7 @@
             if (document.getElementById('reg-cust-father')) document.getElementById('reg-cust-father').value = '';
             if (document.getElementById('reg-cust-phone')) document.getElementById('reg-cust-phone').value = '';
             if (document.getElementById('reg-cust-whatsapp')) document.getElementById('reg-cust-whatsapp').value = '';
-            if (document.getElementById('reg-cust-gender')) document.getElementById('reg-cust-gender').value = 'male';
+            if (document.getElementById('reg-cust-gender')) document.getElementById('reg-cust-gender').value = 'Gents';
             if (document.getElementById('reg-cust-date')) document.getElementById('reg-cust-date').value = new Date().toISOString().split('T')[0];
             if (document.getElementById('reg-cust-address')) document.getElementById('reg-cust-address').value = '';
             if (document.getElementById('reg-cust-notes')) document.getElementById('reg-cust-notes').value = '';
@@ -4576,7 +4525,7 @@
     }
 
     function updateRegGarmentOptions() {
-        const gender = document.getElementById('reg-cust-gender')?.value || 'male';
+        const gender = document.getElementById('reg-cust-gender')?.value || 'Gents';
         const select = document.getElementById('reg-cust-garment');
         if (!select) return;
         
@@ -4605,7 +4554,7 @@
     }
 
     function renderRegMeasurements() {
-        const gender = document.getElementById('reg-cust-gender')?.value || 'male';
+        const gender = document.getElementById('reg-cust-gender')?.value || 'Gents';
         const garment = document.getElementById('reg-cust-garment')?.value || '';
         const grid = document.getElementById('reg-measurements-grid');
         const editKey = document.getElementById('reg-cust-edit-key')?.value;
@@ -4699,7 +4648,7 @@
         const fatherName = document.getElementById('reg-cust-father')?.value.trim() || '';
         const phone = document.getElementById('reg-cust-phone')?.value.trim();
         const whatsapp = document.getElementById('reg-cust-whatsapp')?.value.trim() || phone;
-        const gender = document.getElementById('reg-cust-gender')?.value || 'male';
+        const gender = document.getElementById('reg-cust-gender')?.value || 'Gents';
         const regDate = document.getElementById('reg-cust-date')?.value || new Date().toISOString().split('T')[0];
         const unit = document.getElementById('reg-cust-unit')?.value || 'inches';
         const address = document.getElementById('reg-cust-address')?.value.trim();
@@ -4787,16 +4736,16 @@
                     else if (isTrouserField(f)) tM[f] = v;
                     else kM[f] = v;
                 });
-                const isF = (gender === 'female');
+                const isF = (gender === 'Ladies');
                 if (Object.keys(kM).length > 0) {
-                    const sKey = isF ? 'Female Shirt' : 'Kameez';
+                    const sKey = isF ? 'Ladies Shirt' : 'Kameez';
                     cust.measurements[sKey] = Object.assign(cust.measurements[sKey] || {}, kM);
                     cust.styleOptions[sKey] = styleOpts;
                 }
                 if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                    cust.measurements['Female Trouser Plain Elastic'] = Object.assign(cust.measurements['Female Trouser Plain Elastic'] || {}, tM);
+                    cust.measurements['Ladies Trouser Plain Elastic'] = Object.assign(cust.measurements['Ladies Trouser Plain Elastic'] || {}, tM);
                 } else if (Object.keys(sM).length > 0) {
-                    const shKey = isF ? 'Female Shalwar Elastic' : 'Shalwar';
+                    const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
                     cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
                 }
             } else {
@@ -4873,7 +4822,7 @@
                 c.fatherName || '—',
                 c.phone || '—',
                 c.whatsapp || c.phone || '—',
-                (c.gender === 'female' ? 'Ladies' : 'Gents'),
+                (c.gender === 'Ladies' ? 'Ladies' : 'Gents'),
                 c.regDate || c.createdAt?.split('T')[0] || c.lastVisit || '—',
                 c.address || '—',
                 c.notes || '—',
@@ -5219,13 +5168,13 @@
         normalizeCustomerMeasurements(cust);
         const custId = cust.id || ('CUST-' + (1001 + custIndex));
         const measDate = cust.regDate || cust.createdAt?.split('T')[0] || cust.lastVisit || new Date().toISOString().split('T')[0];
-        const category = (cust.gender === 'female' ? 'Ladies' : 'Gents');
+        const category = (cust.gender === 'Ladies' ? 'Ladies' : 'Gents');
         const unit = cust.unit || 'inches';
         const notes = cust.notes || '';
 
         const measurements = getMergedCustomerMeasurements(cust);
         const styleOptions = cust.styleOptions || {};
-        const isFemale = (cust.gender === 'female');
+        const isLadies = (cust.gender === 'Ladies');
 
         const garmentList = [];
 
@@ -5247,9 +5196,9 @@
                     else kM[f] = v;
                 });
 
-                const shirtKey = isFemale ? 'Female Shirt' : 'Kameez';
-                const shalwarKey = isFemale ? 'Female Shalwar Elastic' : 'Shalwar';
-                const trouserKey = 'Female Trouser Plain Elastic';
+                const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
+                const shalwarKey = isLadies ? 'Ladies Shalwar Elastic' : 'Shalwar';
+                const trouserKey = 'Ladies Trouser Plain Elastic';
 
                 if (Object.keys(kM).length > 0) {
                     const styles = styleOptions[shirtKey] || styleOptions[gName] || styleOptions['Kameez'] || {};
@@ -5266,9 +5215,9 @@
                 let normalizedGName = gName;
                 if (gName === 'Kameez / Shirt Only' || gName === 'Shirt / Kameez') normalizedGName = 'Kameez';
                 else if (gName === 'Gents Shalwar Only') normalizedGName = 'Shalwar';
-                else if (gName === 'FEMALE SHIRT Only') normalizedGName = 'Female Shirt';
-                else if (gName === 'Female Shalwar Elastic Only') normalizedGName = 'Female Shalwar Elastic';
-                else if (gName === 'Female trauser plain elastic Only') normalizedGName = 'Female Trouser Plain Elastic';
+                else if (gName === 'Ladies SHIRT Only') normalizedGName = 'Ladies Shirt';
+                else if (gName === 'Ladies Shalwar Elastic Only') normalizedGName = 'Ladies Shalwar Elastic';
+                else if (gName === 'Ladies trauser plain elastic Only') normalizedGName = 'Ladies Trouser Plain Elastic';
 
                 const styles = styleOptions[normalizedGName] || styleOptions[gName] || {};
                 garmentList.push({ garmentName: normalizedGName, specs, styles });
@@ -5383,7 +5332,7 @@
                 cust.fatherName || '—',
                 cust.phone || '—',
                 cust.whatsapp || cust.phone || '—',
-                (cust.gender === 'female' ? 'Ladies' : 'Gents'),
+                (cust.gender === 'Ladies' ? 'Ladies' : 'Gents'),
                 cust.regDate || cust.createdAt?.split('T')[0] || cust.lastVisit || new Date().toISOString().split('T')[0],
                 cust.address || '—',
                 cust.notes || '—',
@@ -5519,7 +5468,7 @@
                 fatherName: '',
                 phone: custPhone || '',
                 whatsapp: custPhone || '',
-                gender: 'male',
+                gender: 'Gents',
                 regDate: new Date().toISOString().split('T')[0],
                 address: '',
                 notes: '',
@@ -5581,7 +5530,7 @@
                         <div style="font-size:16px; font-weight:800; color:#0f4c81; display:flex; align-items:center; gap:8px;">
                             <span>${cust.name}</span>
                             <span style="background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:800; border:1px solid #bae6fd;">${custId}</span>
-                            <span style="background:#ecfdf5; color:#059669; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:800; border:1px solid #a7f3d0;">${cust.gender === 'female' ? '👩 Ladies' : '👨 Gents'}</span>
+                            <span style="background:#ecfdf5; color:#059669; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:800; border:1px solid #a7f3d0;">${cust.gender === 'Ladies' ? '👩 Ladies' : '👨 Gents'}</span>
                         </div>
                         ${cust.fatherName ? `<div style="font-size:12px; color:var(--text-muted); margin-top:2px;">S/O / D/O: <strong>${cust.fatherName}</strong></div>` : ''}
                     </div>
@@ -5638,7 +5587,7 @@
                 if (styles.collar && styles.collar !== 'None') stylePills.push(`Collar: ${styles.collarCustom || styles.collar}`);
 
                 const safeGarmentName = gName.replace(/'/g, "\\'");
-                const icon = (gName.toLowerCase().includes('shalwar') || gName.toLowerCase().includes('trouser')) ? '👖' : (gName.toLowerCase().includes('kurta') ? '🥻' : (gName.toLowerCase().includes('waistcoat') ? '🧥' : (gName.toLowerCase().includes('shirt') && cust.gender === 'female' ? '👗' : '👔')));
+                const icon = (gName.toLowerCase().includes('shalwar') || gName.toLowerCase().includes('trouser')) ? '👖' : (gName.toLowerCase().includes('kurta') ? '🥻' : (gName.toLowerCase().includes('waistcoat') ? '🧥' : (gName.toLowerCase().includes('shirt') && cust.gender === 'Ladies' ? '👗' : '👔')));
 
                 return `
                     <div style="margin-bottom:12px; background:#ffffff; border:1px solid #cbd5e1; border-radius:10px; padding:12px;">
@@ -6202,7 +6151,7 @@
             const share = totalRevenue > 0 ? ((data.revenue / totalRevenue) * 100).toFixed(1) + '%' : '0%';
             garmentRows.push([
                 gName,
-                (data.gender || 'male').toUpperCase(),
+                (data.gender || 'Gents').toUpperCase(),
                 data.count,
                 data.revenue,
                 share
