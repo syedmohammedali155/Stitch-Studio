@@ -2422,8 +2422,8 @@
                     "Gala (گلا)"
                 ]
             },
-            "Ladies Shalwar Elastic": {
-                "👖 Shalwar Elastic Measurements": [
+            "Ladies Shalwar": {
+                "👖 Shalwar Measurements": [
                     "Shalwar Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Ghaira (گھیرا)",
@@ -2431,8 +2431,8 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Ladies Trouser Plain Elastic": {
-                "👖 Trouser Plain Elastic Measurements": [
+            "Ladies Trouser Plain": {
+                "👖 Trouser Plain Measurements": [
                     "Trouser Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Thai / Raan (ران)",
@@ -2440,7 +2440,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Ladies Complete Suit (Shirt + Shalwar Elastic)": {
+            "Ladies Complete Suit (Shirt + Shalwar )": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2454,7 +2454,7 @@
                     "Kandha (کندھا)",
                     "Gala (گلا)"
                 ],
-                "👖 Shalwar Elastic Measurements": [
+                "👖 Shalwar  Measurements": [
                     "Shalwar Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Ghaira (گھیرا)",
@@ -2462,7 +2462,7 @@
                     "Kamar / Elastic (کمر)"
                 ]
             },
-            "Ladies Complete Suit (Shirt + Trouser Plain Elastic)": {
+            "Ladies Complete Suit (Shirt + Trouser Plain )": {
                 "👗 Shirt Measurements": [
                     "Shirt Length (لمبائی)",
                     "Tera (تیرا)",
@@ -2476,7 +2476,7 @@
                     "Kandha (کندھا)",
                     "Gala (گلا)"
                 ],
-                "👖 Trouser Plain Elastic Measurements": [
+                "👖 Trouser Plain  Measurements": [
                     "Trouser Length (لمبائی)",
                     "Paucha (پانچہ)",
                     "Thai / Raan (ران)",
@@ -2597,8 +2597,8 @@
                     else kMeasures[f] = v;
                 });
                 const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
-                const shalwarKey = isLadies ? 'Ladies Shalwar Elastic' : 'Shalwar';
-                const trouserKey = 'Ladies Trouser Plain Elastic';
+                const shalwarKey = isLadies ? 'Ladies Shalwar ' : 'Shalwar';
+                const trouserKey = 'Ladies Trouser Plain ';
 
                 if (Object.keys(kMeasures).length > 0) {
                     normalized[shirtKey] = Object.assign(normalized[shirtKey] || {}, kMeasures);
@@ -2613,8 +2613,8 @@
                 if (gKey === 'Kameez / Shirt Only' || gKey === 'Shirt / Kameez') targetKey = 'Kameez';
                 else if (gKey === 'Gents Shalwar Only') targetKey = 'Shalwar';
                 else if (gKey === 'Ladies SHIRT Only') targetKey = 'Ladies Shirt';
-                else if (gKey === 'Ladies Shalwar Elastic Only') targetKey = 'Ladies Shalwar Elastic';
-                else if (gKey === 'Ladies trauser plain elastic Only') targetKey = 'Ladies Trouser Plain Elastic';
+                else if (gKey === 'Ladies Shalwar  Only') targetKey = 'Ladies Shalwar ';
+                else if (gKey === 'Ladies trauser plain  Only') targetKey = 'Ladies Trouser Plain ';
 
                 normalized[targetKey] = Object.assign(normalized[targetKey] || {}, cleanSpecs);
             }
@@ -2652,13 +2652,13 @@
         if (garment.includes('Complete Suit') && garment.includes('Shalwar')) {
             return {
                 ...(cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {}),
-                ...(cust.measurements['Ladies Shalwar Elastic'] || cust.measurements['Ladies Shalwar Elastic Only'] || {})
+                ...(cust.measurements['Ladies Shalwar '] || cust.measurements['Ladies Shalwar  Only'] || {})
             };
         }
         if (garment.includes('Complete Suit') && garment.includes('Trouser')) {
             return {
                 ...(cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {}),
-                ...(cust.measurements['Ladies Trouser Plain Elastic'] || cust.measurements['Ladies trauser plain elastic Only'] || {})
+                ...(cust.measurements['Ladies Trouser Plain '] || cust.measurements['Ladies trauser plain Only'] || {})
             };
         }
         if (garment === 'Kameez' || garment === 'Kameez / Shirt Only' || garment === 'Shirt / Kameez') {
@@ -2670,11 +2670,11 @@
         if (garment === 'Ladies Shirt' || garment === 'Ladies SHIRT Only') {
             return cust.measurements['Ladies Shirt'] || cust.measurements['Ladies SHIRT Only'] || {};
         }
-        if (garment === 'Ladies Shalwar Elastic' || garment === 'Ladies Shalwar Elastic Only') {
-            return cust.measurements['Ladies Shalwar Elastic'] || cust.measurements['Ladies Shalwar Elastic Only'] || {};
+        if (garment === 'Ladies Shalwar ' || garment === 'Ladies Shalwar Only') {
+            return cust.measurements['Ladies Shalwar '] || cust.measurements['Ladies Shalwar Only'] || {};
         }
-        if (garment === 'Ladies Trouser Plain Elastic' || garment === 'Ladies trauser plain elastic Only') {
-            return cust.measurements['Ladies Trouser Plain Elastic'] || cust.measurements['Ladies trauser plain elastic Only'] || {};
+        if (garment === 'Ladies Trouser Plain ' || garment === 'Ladies trauser plain Only') {
+            return cust.measurements['Ladies Trouser Plain '] || cust.measurements['Ladies trauser plain Only'] || {};
         }
         return cust.measurements[garment] || {};
     }
@@ -3515,9 +3515,9 @@
                         db[key].measurements[sKey] = Object.assign(db[key].measurements[sKey] || {}, kM);
                     }
                     if (item.garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                        db[key].measurements['Ladies Trouser Plain Elastic'] = Object.assign(db[key].measurements['Ladies Trouser Plain Elastic'] || {}, tM);
+                        db[key].measurements['Ladies Trouser Plain '] = Object.assign(db[key].measurements['Ladies Trouser Plain '] || {}, tM);
                     } else if (Object.keys(sM).length > 0) {
-                        const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
+                        const shKey = isF ? 'Ladies Shalwar' : 'Shalwar';
                         db[key].measurements[shKey] = Object.assign(db[key].measurements[shKey] || {}, sM);
                     }
                 } else {
@@ -3525,8 +3525,8 @@
                     if (gName === 'Kameez / Shirt Only' || gName === 'Shirt / Kameez') gName = 'Kameez';
                     else if (gName === 'Gents Shalwar Only') gName = 'Shalwar';
                     else if (gName === 'Ladies SHIRT Only') gName = 'Ladies Shirt';
-                    else if (gName === 'Ladies Shalwar Elastic Only') gName = 'Ladies Shalwar Elastic';
-                    else if (gName === 'Ladies trauser plain elastic Only') gName = 'Ladies Trouser Plain Elastic';
+                    else if (gName === 'Ladies Shalwar Only') gName = 'Ladies Shalwar ';
+                    else if (gName === 'Ladies trauser plain Only') gName = 'Ladies Trouser Plain ';
 
                     if (!db[key].measurements[gName]) {
                         db[key].measurements[gName] = {};
@@ -4461,9 +4461,9 @@
                 cust.measurements[sKey] = Object.assign(cust.measurements[sKey] || {}, kM);
             }
             if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                cust.measurements['Ladies Trouser Plain Elastic'] = Object.assign(cust.measurements['Ladies Trouser Plain Elastic'] || {}, tM);
+                cust.measurements['Ladies Trouser Plain'] = Object.assign(cust.measurements['Ladies Trouser Plain '] || {}, tM);
             } else if (Object.keys(sM).length > 0) {
-                const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
+                const shKey = isF ? 'Ladies Shalwar ' : 'Shalwar';
                 cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
             }
         } else {
@@ -4743,9 +4743,9 @@
                     cust.styleOptions[sKey] = styleOpts;
                 }
                 if (garment.includes('Trouser') && Object.keys(tM).length > 0) {
-                    cust.measurements['Ladies Trouser Plain Elastic'] = Object.assign(cust.measurements['Ladies Trouser Plain Elastic'] || {}, tM);
+                    cust.measurements['Ladies Trouser Plain '] = Object.assign(cust.measurements['Ladies Trouser Plain '] || {}, tM);
                 } else if (Object.keys(sM).length > 0) {
-                    const shKey = isF ? 'Ladies Shalwar Elastic' : 'Shalwar';
+                    const shKey = isF ? 'Ladies Shalwar ' : 'Shalwar';
                     cust.measurements[shKey] = Object.assign(cust.measurements[shKey] || {}, sM);
                 }
             } else {
@@ -5197,8 +5197,8 @@
                 });
 
                 const shirtKey = isLadies ? 'Ladies Shirt' : 'Kameez';
-                const shalwarKey = isLadies ? 'Ladies Shalwar Elastic' : 'Shalwar';
-                const trouserKey = 'Ladies Trouser Plain Elastic';
+                const shalwarKey = isLadies ? 'Ladies Shalwar ' : 'Shalwar';
+                const trouserKey = 'Ladies Trouser Plain ';
 
                 if (Object.keys(kM).length > 0) {
                     const styles = styleOptions[shirtKey] || styleOptions[gName] || styleOptions['Kameez'] || {};
@@ -5216,8 +5216,8 @@
                 if (gName === 'Kameez / Shirt Only' || gName === 'Shirt / Kameez') normalizedGName = 'Kameez';
                 else if (gName === 'Gents Shalwar Only') normalizedGName = 'Shalwar';
                 else if (gName === 'Ladies SHIRT Only') normalizedGName = 'Ladies Shirt';
-                else if (gName === 'Ladies Shalwar Elastic Only') normalizedGName = 'Ladies Shalwar Elastic';
-                else if (gName === 'Ladies trauser plain elastic Only') normalizedGName = 'Ladies Trouser Plain Elastic';
+                else if (gName === 'Ladies Shalwar Only') normalizedGName = 'Ladies Shalwar ';
+                else if (gName === 'Ladies trauser plain Only') normalizedGName = 'Ladies Trouser Plain ';
 
                 const styles = styleOptions[normalizedGName] || styleOptions[gName] || {};
                 garmentList.push({ garmentName: normalizedGName, specs, styles });
